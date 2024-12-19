@@ -5,6 +5,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站维护中</title>
     <style>
         body {
@@ -22,18 +23,36 @@
 
         .container {
             background-color: #fff;
-            padding: 40px;
+            padding: 20px; /* 移动端减少内边距 */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%; /* 移动端设置宽度 */
+            max-width: 500px; /* 设置最大宽度 */
         }
 
         h1 {
             color: #555;
+            font-size: 24px; /* 移动端适当减小字体大小 */
         }
 
         p {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 16px; /* 移动端适当减小字体大小 */
+        }
+
+        /* 媒体查询，针对小屏幕设备 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -41,7 +60,7 @@
     <div class="container">
         <h1>网站正在维护中</h1>
         <p>感谢您的访问，我们正在对网站进行升级和维护，请稍后再来。</p>
-        <hr/>
+        <hr />
         <h1>Website Under Maintenance</h1>
         <p>Thank you for visiting. We are currently upgrading and maintaining the website, please come back later.</p>
     </div>
