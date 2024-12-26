@@ -6,63 +6,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网站维护中</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', '微软雅黑', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px; /* 移动端减少内边距 */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 90%; /* 移动端设置宽度 */
-            max-width: 500px; /* 设置最大宽度 */
-        }
-
-        h1 {
-            color: #555;
-            font-size: 24px; /* 移动端适当减小字体大小 */
-        }
-
-        p {
-            margin-top: 20px;
-            font-size: 16px; /* 移动端适当减小字体大小 */
-        }
-
-        /* 媒体查询，针对小屏幕设备 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 20px;
-            }
-
-            p {
-                font-size: 14px;
-            }
-        }
-    </style>
+    <title>小熊歌单搬家</title>
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-    <div class="container">
-        <h1>网站正在维护中</h1>
-        <p>感谢您的访问，我们正在对网站进行升级和维护，请稍后再来。</p>
-        <hr />
-        <h1>Website Under Maintenance</h1>
-        <p>Thank you for visiting. We are currently upgrading and maintaining the website, please come back later.</p>
+    <section class="hero">
+        <div class="container">
+            <img src="assets/images/logo.png" alt="小熊歌单搬家 Logo" class="logo">
+            <h1>小熊歌单搬家</h1>
+            <p>轻松迁移歌单，在主流音乐平台间来去自如</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary disabled">
+                    <img src="assets/images/store-chrome.png" alt="Chrome 图标" class="chrome-icon">
+                    谷歌官方市场下载（上架中）
+                </a>
+                <a href="https://my-playlist.victor42.work/%E5%B0%8F%E7%86%8A%E6%AD%8C%E5%8D%95%E6%90%AC%E5%AE%B6.zip" class="btn btn-outline">下载crx安装包</a>
+            </div>
+            <div class="stats">
+                已累计帮助用户迁移超过
+                <strong id="countup">0</strong>
+                首歌曲
+            </div>
+            <div class="scroll-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <section class="video-section">
+        <div class="container">
+            <h2></h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls style="width:100%;height:100%;object-fit:cover;border-radius:0.75rem">
+                        <source src="https://my-playlist.victor42.work/trailer.mp4" type="video/mp4">
+                        你的浏览器不支持 video 标签。
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="play-button-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>成功率高</h3>
+                    <p>智能匹配歌曲，识别成功率高达90%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>操作便捷</h3>
+                    <p>电脑提取歌单，扫码无缝衔接到手机，轻松完成迁移</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>隐私保障</h3>
+                    <p>歌曲列表存放在临时页面，阅后即焚，确保你的数据安全无虞</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tutorial">
+        <div class="container">
+            <h2>crx包安装教程</h2>
+            <div class="tutorial-steps">
+                <ol class="tutorial-list">
+                    <li>
+                        <span class="step-number">01</span>
+                        <p>打开 Google Chrome 浏览器 -> 点击右上角「拼图」按钮，进入扩展程序页面（其他浏览器类似）</p>
+                        <img src="assets/images/tutorial-1.png" alt="步骤1">
+                    </li>
+                    <li>
+                        <span class="step-number">02</span>
+                        <p>将右上角「开发者模式」打开</p>
+                        <img src="assets/images/tutorial-2.png" alt="步骤2">
+                    </li>
+                    <li>
+                        <span class="step-number">03</span>
+                        <p>把「小熊歌单搬家.zip」拖入扩展程序页面</p>
+                        <img src="assets/images/tutorial-3.png" alt="步骤3">
+                    </li>
+                    <li>
+                        <span class="step-number">04</span>
+                        <p>安装成功，去音乐网站开始搬家吧！</p>
+                        <p>
+                            <a href="https://y.qq.com/" target="_blank">QQ音乐</a>
+                            |
+                            <a href="https://music.163.com/" target="_blank">网易云音乐</a>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>常见问题</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        可以从哪些平台导出歌单？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        QQ音乐、网易云音乐，未来会根据需要支持更多平台。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        歌单可以搬家到哪些平台？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        QQ音乐、网易云音乐，未来会根据需要支持更多平台。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        搬家后的歌单在哪里查看？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        搬家完成后，歌单会自动同步到你的音乐账号中。导入需要一定时间，你可以稍等片刻，然后歌单就出现了。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        为什么搬家后歌曲数量减少了？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        这可能是因为歌曲版权问题，或者两个平台的歌曲信息不完全一致。我们已经根据目标平台所需格式做了针对性的优化，为你尽可能提高识别成功率。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        我的账号信息安全吗？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        我们不会存储你的任何账号密码信息，也不会长期保留你的歌单内容。出于搬家中转需要，我们会短暂保留歌单内容24小时。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-buttons">
+        <div class="container">
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary disabled">
+                    <img src="assets/images/store-chrome.png" alt="Chrome 图标" class="chrome-icon">
+                    谷歌官方市场下载（上架中）
+                </a>
+                <a href="https://my-playlist.victor42.work/%E5%B0%8F%E7%86%8A%E6%AD%8C%E5%8D%95%E6%90%AC%E5%AE%B6.zip" class="btn btn-outline">下载crx安装包</a>
+            </div>
+        </div>
+    </section>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>联系我们</h4>
+                    <p>邮箱：<a href="mailto:greenzorromail@gmail.com">greenzorromail@gmail.com</a></p>
+                </div>
+                <div>
+                    <h4>法律信息</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="privacy-policy.html">隐私政策</a>
+                        <a href="terms-of-use.html">使用条款</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span id="copyright-year">2024</span> 小熊歌单搬家.<br>All rights reserved.</span>
+                <img src="assets/images/logo.png" alt="小熊歌单搬家 Logo" style="width: 40px; height: 40px;">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.toggle').textContent = '+';
+                });
+
+                if (!wasActive) {
+                    item.classList.add('active');
+                    question.querySelector('.toggle').textContent = '−';
+                }
+            });
+        });
+
+        // 动态更新版权年份
+        const copyrightYear = document.getElementById('copyright-year');
+        const currentYear = new Date().getFullYear();
+        if (currentYear > 2024) {
+            copyrightYear.textContent = `2024 - ${currentYear}`;
+        } else {
+            copyrightYear.textContent = '2024';
+        }
+
+        // 数字滚动效果
+        const countUpElement = document.getElementById('countup');
+        const targetNumber = 100000;
+        const duration = 800; // 动画时长0.8秒
+        const startTime = Date.now();
+
+        function animateCountUp() {
+            const now = Date.now();
+            const progress = Math.min((now - startTime) / duration, 1);
+            const currentNumber = Math.floor(progress * targetNumber);
+            
+            // 格式化数字，每三位加逗号
+            countUpElement.textContent = currentNumber.toLocaleString();
+            
+            if (progress < 1) {
+                requestAnimationFrame(animateCountUp);
+            }
+        }
+
+        animateCountUp();
+
+        // 播放按钮点击事件
+        const video = document.querySelector('.video-wrapper video');
+        const playButton = document.querySelector('.play-button-overlay');
+        const videoOverlay = document.querySelector('.video-overlay');
+        
+        playButton.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                video.setAttribute('playing', '');
+            } else {
+                video.pause();
+                video.removeAttribute('playing');
+            }
+        });
+
+        video.addEventListener('play', () => {
+            video.setAttribute('playing', '');
+        });
+
+        video.addEventListener('pause', () => {
+            video.removeAttribute('playing');
+        });
+
+        video.addEventListener('ended', () => {
+            video.removeAttribute('playing');
+        });
+    </script>
 </body>
 </html>
