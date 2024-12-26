@@ -152,7 +152,7 @@ body {
 }
 
 .main-content {
-    background: linear-gradient(to bottom, #ffffff 50%, #f1fbfe 100%);
+    background: linear-gradient(to bottom, #ffffff 50%, #e3f4f9 100%);
     padding-top: 8rem;
 }
 
@@ -356,8 +356,6 @@ body {
 }
 
 .faq-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -368,6 +366,7 @@ body {
 }
 
 .faq-question {
+    padding: 1.5rem 0;
     font-weight: 500;
     cursor: pointer;
     display: flex;
@@ -378,9 +377,9 @@ body {
 }
 
 .faq-answer {
+    margin-bottom: 1.5rem;
     color: var(--text-muted);
     display: none;
-    margin-top: 1rem;
     line-height: 1.6;
     font-size: 1rem;
 }
@@ -579,4 +578,12 @@ video[playing] + .video-overlay,
 video[playing] ~ .play-button-overlay {
     opacity: 0;
     pointer-events: none;
+}
+
+/* 移动端隐藏视频遮罩和播放按钮 */
+@media (max-width: 768px) {
+    .video-overlay,
+    .play-button-overlay {
+        display: none;
+    }
 }
