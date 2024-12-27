@@ -24,6 +24,16 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* 链接样式 */
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
 .container {
     max-width: var(--content-width);
     margin: 0 auto;
