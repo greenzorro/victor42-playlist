@@ -140,7 +140,7 @@ a:hover {
     opacity: 0.2;
 }
 
-.chrome-icon {
+.chrome-icon, .edge-icon {
     width: 24px;
     height: 24px;
     margin-right: 8px;
