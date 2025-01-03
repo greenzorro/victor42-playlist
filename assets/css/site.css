@@ -125,6 +125,10 @@ a:hover {
     font-size: 1rem;
 }
 
+.btn:hover {
+    color: inherit;
+}
+
 .btn-primary {
     background: var(--primary);
     color: white;
@@ -133,6 +137,7 @@ a:hover {
 
 .btn-primary:hover {
     background: var(--primary-light);
+    color: white;
 }
 
 .btn-primary.disabled {
