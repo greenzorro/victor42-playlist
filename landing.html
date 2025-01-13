@@ -1,0 +1,170 @@
+<!--
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎 - 小熊歌单搬家</title>
+    <link rel="stylesheet" href="assets/css/site.css">
+    
+    <!-- 添加 favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images//favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images//favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images//favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images//favicon/site.webmanifest">
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1>小熊歌单搬家</h1>
+            <p>轻松迁移歌单，在主流音乐平台间来去自如</p>
+            
+            <div class="platforms hero-platforms">
+                <div class="platforms-grid">
+                    <div class="platform-group">
+                        <h3>支持导出平台</h3>
+                        <div class="platform-list">
+                            <div class="platform-item">
+                                <img src="assets/images/platform-qq.png" alt="QQ音乐">
+                                <span>QQ音乐</span>
+                            </div>
+                            <div class="platform-item">
+                                <img src="assets/images/platform-netease.png" alt="网易云音乐">
+                                <span>网易云音乐</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="platform-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </div>
+                    <div class="platform-group">
+                        <h3>支持导入平台</h3>
+                        <div class="platform-list">
+                            <div class="platform-item">
+                                <img src="assets/images/platform-qq.png" alt="QQ音乐">
+                                <span>QQ音乐</span>
+                            </div>
+                            <div class="platform-item">
+                                <img src="assets/images/platform-netease.png" alt="网易云音乐">
+                                <span>网易云音乐</span>
+                            </div>
+                            <div class="platform-item">
+                                <img src="assets/images/platform-kugou.png" alt="酷狗音乐">
+                                <span>酷狗音乐</span>
+                            </div>
+                            <div class="platform-item">
+                                <img src="assets/images/platform-qishui.png" alt="汽水音乐">
+                                <span>汽水音乐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>现在开始搬家吧！</p>
+            <div class="btn-group hero-buttons">
+                <a href="https://y.qq.com/n/ryqq/profile/create" target="_blank" class="btn btn-outline">
+                    <img src="assets/images/platform-qq.png" alt="QQ音乐" class="platform-icon">
+                    去QQ音乐
+                </a>
+                <a href="https://music.163.com/#/my/" target="_blank" class="btn btn-outline">
+                    <img src="assets/images/platform-netease.png" alt="网易云音乐" class="platform-icon">
+                    去网易云音乐
+                </a>
+            </div>
+
+            <div class="scroll-down">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-content">
+        <section class="video-section">
+        <div class="container">
+            <h2></h2>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <video controls style="width:100%;height:100%;object-fit:cover;border-radius:0.75rem">
+                        <source src="https://my-playlist.victor42.work/trailer.mp4" type="video/mp4">
+                        你的浏览器不支持 video 标签。
+                    </video>
+                    <div class="video-overlay"></div>
+                    <div class="play-button-overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>联系我们</h4>
+                    <p>邮箱：<a href="mailto:greenzorromail@gmail.com">greenzorromail@gmail.com</a></p>
+                </div>
+                <div>
+                    <h4>法律信息</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="https://playlist.victor42.work/pages/privacy-policy">隐私政策</a>
+                        <a href="https://playlist.victor42.work/pages/terms-of-use">使用条款</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span id="copyright-year">2024</span> 小熊歌单搬家.<br>All rights reserved.</span>
+                <img src="assets/images/logo.png" alt="小熊歌单搬家 Logo" style="width: 40px; height: 40px;">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 动态更新版权年份
+        const copyrightYear = document.getElementById('copyright-year');
+        const currentYear = new Date().getFullYear();
+        if (currentYear > 2024) {
+            copyrightYear.textContent = `2024 - ${currentYear}`;
+        } else {
+            copyrightYear.textContent = '2024';
+        }
+
+        // 播放按钮点击事件
+        const video = document.querySelector('.video-wrapper video');
+        const playButton = document.querySelector('.play-button-overlay');
+        const videoOverlay = document.querySelector('.video-overlay');
+        
+        playButton.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                video.setAttribute('playing', '');
+            } else {
+                video.pause();
+                video.removeAttribute('playing');
+            }
+        });
+
+        video.addEventListener('play', () => {
+            video.setAttribute('playing', '');
+        });
+
+        video.addEventListener('pause', () => {
+            video.removeAttribute('playing');
+        });
+
+        video.addEventListener('ended', () => {
+            video.removeAttribute('playing');
+        });
+    </script>
+</body>
+</html>

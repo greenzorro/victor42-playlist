@@ -134,6 +134,54 @@
         </div>
     </section>
 
+    <section class="platforms">
+        <div class="container">
+            <h2>支持平台</h2>
+            <div class="platforms-grid">
+                <div class="platform-group">
+                    <h3>导出</h3>
+                    <div class="platform-list">
+                        <div class="platform-item">
+                            <img src="assets/images/platform-qq.png" alt="QQ音乐">
+                            <span>QQ音乐</span>
+                        </div>
+                        <div class="platform-item">
+                            <img src="assets/images/platform-netease.png" alt="网易云音乐">
+                            <span>网易云音乐</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="platform-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </div>
+                <div class="platform-group">
+                    <h3>导入</h3>
+                    <div class="platform-list">
+                        <div class="platform-item">
+                            <img src="assets/images/platform-qq.png" alt="QQ音乐">
+                            <span>QQ音乐</span>
+                        </div>
+                        <div class="platform-item">
+                            <img src="assets/images/platform-netease.png" alt="网易云音乐">
+                            <span>网易云音乐</span>
+                        </div>
+                        <div class="platform-item">
+                            <img src="assets/images/platform-kugou.png" alt="酷狗音乐">
+                            <span>酷狗音乐</span>
+                        </div>
+                        <div class="platform-item">
+                            <img src="assets/images/platform-qishui.png" alt="汽水音乐">
+                            <span>汽水音乐</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="tutorial">
         <div class="container">
             <h2>crx包安装教程</h2>
@@ -158,9 +206,9 @@
                         <span class="step-number">04</span>
                         <p>安装成功，去音乐网站开始搬家吧！</p>
                         <p>
-                            <a href="https://y.qq.com/" target="_blank">QQ音乐</a>
+                            <a href="https://y.qq.com/n/ryqq/profile/create" target="_blank">QQ音乐</a>
                             |
-                            <a href="https://music.163.com/" target="_blank">网易云音乐</a>
+                            <a href="https://music.163.com/#/my/" target="_blank">网易云音乐</a>
                         </p>
                     </li>
                 </ol>
@@ -172,24 +220,6 @@
         <div class="container">
             <h2>常见问题</h2>
             <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        可以从哪些平台导出歌单？
-                        <span class="toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        QQ音乐、网易云音乐，未来会根据需要支持更多平台。
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        歌单可以搬家到哪些平台？
-                        <span class="toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        QQ音乐、网易云音乐，未来会根据需要支持更多平台。
-                    </div>
-                </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         搬家后的歌单在哪里查看？
@@ -317,11 +347,36 @@
 
         // 数字滚动效果
         const countUpElement = document.getElementById('countup');
-        const targetNumber = 100000;
+        const statsElement = document.querySelector('.stats');
+        let targetNumber = 100000; // 默认值
+
+        // 从stats.txt获取实际数字
+        fetch('https://my-playlist.victor42.work/stats-aggr.txt')
+            .then(response => response.text())
+            .then(data => {
+                targetNumber = parseInt(data.trim()) || 100000; // 如果解析失败则使用默认值
+                
+                // 只有当数字大于100000时才显示stats
+                if (targetNumber > 100000) {
+                    statsElement.classList.add('visible');
+                }
+                
+                animateCountUp();
+            })
+            .catch(error => {
+                console.error('获取统计数据失败:', error);
+                animateCountUp(); // 出错时使用默认值
+            });
+
         const duration = 800; // 动画时长0.8秒
-        const startTime = Date.now();
+        let startTime;
 
         function animateCountUp() {
+            startTime = Date.now();
+            requestAnimationFrame(updateCount);
+        }
+
+        function updateCount() {
             const now = Date.now();
             const progress = Math.min((now - startTime) / duration, 1);
             const currentNumber = Math.floor(progress * targetNumber);
@@ -330,7 +385,7 @@
             countUpElement.textContent = currentNumber.toLocaleString();
             
             if (progress < 1) {
-                requestAnimationFrame(animateCountUp);
+                requestAnimationFrame(updateCount);
             }
         }
 
