@@ -151,11 +151,33 @@ a:hover {
     opacity: 1;
     visibility: visible;
 }
-
 .stats strong {
     font-weight: 700;
     color: var(--primary);
     font-size: 2rem;
+    display: inline-block;
+    margin: 0 0.25rem;
+}
+
+.stats-detail {
+    display: block;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0.75rem auto 0;
+    transition: color 0.15s ease;
+}
+
+.stats-detail:hover {
+    color: var(--primary);
+}
+
+.stats-detail svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 0.25rem;
+    vertical-align: middle;
+    margin-top: -2px;
 }
 
 .scroll-down {
@@ -634,6 +656,10 @@ video[playing] ~ .play-button-overlay {
 
     .stats strong {
         font-size: 1.75rem;
+    }
+
+    .stats-detail {
+        margin: 0.75rem auto 0;
     }
 }
 
