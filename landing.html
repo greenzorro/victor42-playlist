@@ -117,6 +117,87 @@
         </div>
     </section>
 
+    <section class="faq">
+        <div class="container">
+            <h2>常见问题</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        搬家后的歌单在哪里查看？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        搬家完成后，歌单会自动同步到你的音乐账号中。导入需要一定时间，你可以稍等片刻，然后歌单就出现了。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        为什么要把一个歌单分成几段？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        1. 音乐平台限制：音乐平台在导入歌单时，每次导入都有歌曲数或字数限制（如QQ音乐）。插件已经根据目标平台的限制，把歌单拆分好了，免去你手工拆分的麻烦。<br>
+                        2. 保证导入成功率：部分音乐平台的导入功能不稳定（如网易云音乐），单次导入歌曲太多会遇到导入失败的情况，拆分可以大大降低失败的可能性。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        网易云里我喜欢的音乐只能导出歌单前1000首？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        这是平台的限制，建议把我喜欢的音乐分到不同的歌单里，每个不超过1000首分别搬家。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        网易云搬家到汽水音乐失败了怎么办？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        经过作者测试，目前汽水音乐的导入功能已经不支持网易云歌单了（之前支持的），即使用官方的导入方法也一样失败。临时解决办法是从网易云搬到QQ音乐，再从QQ音乐搬到汽水音乐。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        为什么要选择「文字导入」？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        经过实测，文字导入的成功率最高，且最可靠。相比截图导入，丢失的歌曲大大减少。而通过歌单链接导入，则经常出现失败的情况。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        歌单里灰掉的音乐可以搬家吗？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        可以的。通过「文字导入」的方式，目标平台只认歌曲名和歌手名，不在乎原平台有没有这首歌的版权。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        为什么搬家后歌曲数量减少了？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        这可能是因为歌曲版权问题，或者两个平台的歌曲信息不完全一致。我们已经根据目标平台所需格式做了针对性的优化，为你尽可能提高识别成功率。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        我的账号信息安全吗？
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        我们不会存储你的任何账号密码信息，也不会长期保留你的歌单内容。出于搬家中转需要，我们会短暂保留歌单内容24小时。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -140,6 +221,24 @@
     </footer>
 
     <script>
+        // 常见问题交互
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.toggle').textContent = '+';
+                });
+
+                if (!wasActive) {
+                    item.classList.add('active');
+                    question.querySelector('.toggle').textContent = '−';
+                }
+            });
+        });
+
         // 动态更新版权年份
         const copyrightYear = document.getElementById('copyright-year');
         const currentYear = new Date().getFullYear();
