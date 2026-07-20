@@ -28,6 +28,7 @@
 - `landing.html`: 一个简化的登陆页面，可能是为已经安装插件的用户或特定渠道准备的，内容相对简洁。
 - `privacy-policy.html`: 隐私政策页面。
 - `terms-of-use.html`: 使用条款页面。
+- 线上法律页面路径分别为 `/privacy-policy.html` 与 `/terms-of-use.html`，并由 sitemap 直接收录。
 - `survey.html`: 用户调研问卷页面。
 - `assets/`: 存放静态资源的目录。
   - `css/site.css`: 全站唯一的样式文件。
